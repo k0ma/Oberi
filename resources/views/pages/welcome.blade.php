@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="jumbotron">
-                <h1>Добре дошли в Обери - гидовник за катерачи!</h1>
+                <h1>Добре дошли в О&#768;бери - гидовник за катерачи!</h1>
                 <p>Благодаря за отделеното време</p>
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Популярни обекти</a></p>
             </div>

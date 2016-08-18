@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Обери</a>
+            <a class="navbar-brand" href="#">О&#768;бери</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
