@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Post;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -50,6 +51,8 @@ class PostController extends Controller
 
         $post->save();
 
+        Session::flash('success', 'Успешно създадохте нов обект');
+
        return redirect()->route('posts.show', $post->id);
     }
 
@@ -61,7 +64,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('posts.show');
     }
 
     /**
