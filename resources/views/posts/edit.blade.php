@@ -1,12 +1,17 @@
 @extends('main')
 
-@section('title', '| View Post')
+@section('title', '| Edit')
 
 @section('content')
     <div class="row">
+       <!-- start form -->
+        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method'=>'PUT']) !!}
         <div class="col-md-8">
-            <h2>{{ $post->title }}</h2>
-            <p class="lead">{{ $post->body }}</p>
+            {{ Form::label('title', 'Име на обекта: ') }}
+            {{ Form::text('title', null,["class"=>'form-control input-lg']) }}
+
+            {{ Form::label('body', 'Описание на обекта: ', ["class"=>'form-spacing-top']) }}
+            {{ Form::textarea('body',null, ["class"=>'form-control']) }}
         </div>
         <div class="col-md-4">
             <div class="well">
@@ -22,15 +27,18 @@
                 <hr/>
                 <div class="row">
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.edit', 'Редактирай', array($post->id), array('class'=>'btn btn-primary btn-block')) !!}
+                        {!! Html::linkRoute('posts.edit', 'Откажи', array($post->id), array('class'=>'btn btn-danger btn-block btn-sm')) !!}
                     </div>
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.destroy', 'Изтрий', array($post->id), array('class'=>'btn btn-danger btn-block')) !!}
+                        {{ Form::submit('Запази', ["class"=>'btn btn-success btn-block btn-sm']) }}
                     </div>
                 </div>
             </div>
         </div>
+        <!-- end form -->
+        {!! Form::close() !!}
+
     </div>
 
 
-@endsection
+@stop

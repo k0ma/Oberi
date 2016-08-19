@@ -17,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts=Post::all();
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -76,7 +77,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post=Post::find($id);
+        return view('posts.edit')->withPost($post);
     }
 
     /**
@@ -88,7 +90,21 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'title' => 'required|max:255',
+            'body' => 'required'
+        ));
+
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+
+        $post->save();
+
+        Session::flash('success', 'Промените бяха успешно запазени.');
+
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**
