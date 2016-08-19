@@ -10,19 +10,22 @@
             {{ Form::label('title', 'Име на обекта: ') }}
             {{ Form::text('title', null,["class"=>'form-control input-lg']) }}
 
+            {{ Form::label('slug', 'Slug: ',["class"=>'form-spacing-top']) }}
+            {{ Form::text('slug', null,["class"=>'form-control']) }}
+
             {{ Form::label('body', 'Описание на обекта: ', ["class"=>'form-spacing-top']) }}
             {{ Form::textarea('body',null, ["class"=>'form-control']) }}
         </div>
         <div class="col-md-4">
             <div class="well">
                 <dl class="dl-horizontal">
-                    <dt>Създаден на:</dt>
-                    <dd>{{ date('j M Y H:i', strtotime($post->created_at)) }}</dd>
+                    <label>Създаден на:</label>
+                    <p>{{ date('j M Y H:i', strtotime($post->created_at)) }}</p>
                 </dl>
 
                 <dl class="dl-horizontal">
-                    <dt>Последна редакция:</dt>
-                    <dd>{{ date('j M Y H:i', strtotime($post->updated_at)) }}</dd>
+                    <label>Последна редакция:</label>
+                    <p>{{ date('j M Y H:i', strtotime($post->updated_at)) }}</p>
                 </dl>
                 <hr/>
                 <div class="row">

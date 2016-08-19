@@ -18,6 +18,9 @@
                 {{ Form::label('title',  'Име на обекта:') }}
                 {{ Form::text('title', null, array('class' => 'form-control', 'required' =>'', 'maxlength' => '255')) }}
 
+                {{ Form::label('slug', 'Slug:') }}
+                {{ Form::text('slug', null, array("class"=> 'form-control','required'=>'', 'minlength' =>'5', 'maxlength'=>'255')) }}
+
                 {{ Form::label('body',  'Описание на обекта:') }}
                 {{ Form::textarea('body', null, array('class' => 'form-control', 'required' =>'')) }}
 

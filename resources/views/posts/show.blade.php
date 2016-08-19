@@ -10,14 +10,20 @@
         </div>
         <div class="col-md-4">
             <div class="well">
+
                 <dl class="dl-horizontal">
-                    <dt>Създаден на:</dt>
-                    <dd>{{ date('j M Y H:i', strtotime($post->created_at)) }}</dd>
+                    <label>URL:</label>
+                    <p><a href="{{ route('blog.single', $post->slug) }}">{{ route('blog.single', $post->slug) }}</a></p>
                 </dl>
 
                 <dl class="dl-horizontal">
-                    <dt>Последна редакция:</dt>
-                    <dd>{{ date('j M Y H:i', strtotime($post->updated_at)) }}</dd>
+                    <label>Създаден на:</label>
+                    <p>{{ date('j M Y H:i', strtotime($post->created_at)) }}</p>
+                </dl>
+
+                <dl class="dl-horizontal">
+                    <label>Последна редакция:</label>
+                    <p>{{ date('j M Y H:i', strtotime($post->updated_at)) }}</p>
                 </dl>
                 <hr/>
                 <div class="row">
