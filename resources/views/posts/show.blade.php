@@ -32,6 +32,11 @@
                         {!! Form::close() !!}
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ Html::linkRoute('posts.index', "<< Виж всички обекти", [], ["class"=>'btn btn-default btn-block btn-h2-spacing']) }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
