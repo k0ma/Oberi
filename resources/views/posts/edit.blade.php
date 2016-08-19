@@ -27,7 +27,7 @@
                 <hr/>
                 <div class="row">
                     <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.edit', 'Откажи', array($post->id), array('class'=>'btn btn-danger btn-block btn-sm')) !!}
+                        {!! Html::linkRoute('posts.show', 'Откажи', array($post->id), array('class'=>'btn btn-danger btn-block btn-sm')) !!}
                     </div>
                     <div class="col-sm-6">
                         {{ Form::submit('Запази', ["class"=>'btn btn-success btn-block btn-sm']) }}
