@@ -32,7 +32,7 @@ class PostController extends Controller
        //validate the data
         $this->validate($request, array(
              'title' => 'required|max:255',
-             'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+             'slug' => 'required|alpha_dash|min:2|max:255|unique:posts,slug',
              'body' => 'required'
         ));
 
@@ -78,7 +78,7 @@ class PostController extends Controller
         }else {
             $this->validate($request, array(
                 'title' => 'required|max:255',
-                'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+                'slug' => 'required|alpha_dash|min:2|max:255|unique:posts,slug',
                 'body' => 'required'
             ));
         }

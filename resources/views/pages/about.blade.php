@@ -1,5 +1,5 @@
 @extends('main')
-@section('title', '| About')
+@section('title', '| За нас')
 @section('content')
     <div class="row">
         <div class="col-md-12">
