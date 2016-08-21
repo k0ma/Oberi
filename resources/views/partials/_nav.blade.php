@@ -21,16 +21,21 @@
                 <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Контакти</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                @if(Auth::check())
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Профил <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Здравей, {{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('posts.index') }}">Постове</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{{ route('logout') }}">Изход</a></li>
                     </ul>
                 </li>
+
+                @else
+
+                    <a href="{{ route('login') }}" class="btn btn-default btn-spacing-top">Вход</a>
+
+                @endif
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

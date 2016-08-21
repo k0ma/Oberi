@@ -8,7 +8,7 @@
             {!! Form::open() !!}
 
             {{ Form::label('name', 'Име') }}
-            {{ Form::email('name', null, ['class'=> 'form-control']) }}
+            {{ Form::text('name', null, ['class'=> 'form-control']) }}
 
             {{ Form::label('email', 'Email:') }}
             {{ Form::email('email', null, ['class'=>'form-control']) }}
@@ -18,7 +18,7 @@
 
             {{ Form::label('password_confirmation', 'Повтори парола:') }}
             {{ Form::password('password_confirmation', ['class'=>'form-control']) }}
-            
+
             {{ Form::submit('Създай профил', ['class'=>'btn btn-primary btn-block form-spacing-top']) }}
 
 
