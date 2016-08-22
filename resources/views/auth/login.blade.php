@@ -19,7 +19,7 @@
             <br/>
             {{ Form::submit('Вход', ['class'=>'btn btn-primary btn-block']) }}
 
-
+            <p><a href="{{ url('password/reset') }}">Забравена парола?</a></p>
 
             {!! Form::close() !!}
 

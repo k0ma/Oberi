@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'noreplay@koma-art.com', 'name' => 'Laravel App'],
 
     /*
     |--------------------------------------------------------------------------
