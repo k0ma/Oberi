@@ -2,6 +2,12 @@
 
 @section('title', '| Edit')
 
+@section('stylesheets')
+
+    {!! Html::style('css/select2.min.css') !!}
+
+@endsection
+
 @section('content')
     <div class="row">
        <!-- start form -->
@@ -15,6 +21,9 @@
 
             {{ Form::label('category_id', 'Категория:',["class"=>'form-spacing-top']) }}
             {{ Form::select('category_id', $categories, null, ['class'=> 'form-control']) }}
+
+            {{ Form::label('tags', 'Тагове:', ['class'=> 'form-spacing top']) }}
+            {{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
 
             {{ Form::label('body', 'Описание на обекта: ', ["class"=>'form-spacing-top']) }}
             {{ Form::textarea('body',null, ["class"=>'form-control']) }}
@@ -48,3 +57,13 @@
 
 
 @stop
+
+@section('scripts')
+
+    {!! Html::script('js/select2.min.js') !!}
+    <script type="text/javascript">
+        $(".select2-multi").select2();
+        $('.select2-multi').select2().val({!! json_encode($post->tags()->getRelatedIds()) !!}).trigger('change');
+    </script>
+
+@endsection
