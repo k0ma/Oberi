@@ -27,6 +27,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('posts.index') }}">Постове</a></li>
                         <li><a href="{{ route('categories.index') }}">Категории</a></li>
+                        <li><a href="{{ route('tags.index') }}">Тагове</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{{ route('logout') }}">Изход</a></li>
                     </ul>
