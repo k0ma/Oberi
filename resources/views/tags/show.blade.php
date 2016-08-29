@@ -8,8 +8,13 @@
         <div class="col-md-8">
             <h1>Тагът "{{ $tag->name }}"<small> е свързан с {{$tag->posts()->count()}} обекта</small></h1>
         </div>
-        <div class="col-md-2 col-md-offset-2">
-            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-primary pull-right btn-h2-spacing btn-block">Редактиране</a>
+        <div class="col-md-2 col-md-offset-1">
+            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-sm btn-primary btn-h2-spacing btn-block">Редактиране</a>
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+            {{ Form::open(['route'=> ['tags.destroy', $tag->id], 'method'=> 'DELETE']) }}
+                {{ Form::submit('Delete', ['class'=> 'btn btn-sm btn-danger btn-block btn-h2-spacing']) }}
+            {{ Form::close() }}
         </div>
     </div>
     <div class="row">
