@@ -51,7 +51,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = Category::find($id);
+        return view('categories.show')->withCategories($categories);
     }
 
     /**
@@ -62,7 +63,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories=Category::find($id);
+        return view('categories.edit')->withCategories($categories);
     }
 
     /**
@@ -74,7 +76,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categories=Category::find($id);
+        $this->validate($request, ['name'=>'required|max:255']);
+
+        $categories->name=$request->name;
+        $categories->save();
+
+        Session::flash('success', "Успешно запазихте промените!");
+
+        return redirect()->route('categories.show', $categories->id);
     }
 
     /**
