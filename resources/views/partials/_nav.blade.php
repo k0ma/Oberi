@@ -25,7 +25,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Здравей, {{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ route('posts.index') }}">Постове</a></li>
+                        <li><a href="{{ route('posts.index') }}">Обекти</a></li>
                         <li><a href="{{ route('categories.index') }}">Категории</a></li>
                         <li><a href="{{ route('tags.index') }}">Тагове</a></li>
                         <li role="separator" class="divider"></li>
