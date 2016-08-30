@@ -17,7 +17,7 @@
 
             <p>{{ substr($post->body, 0, 250) }}{{ strlen($post->body)>250?"...":"" }}</p>
 
-            <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary">Виж повече</a>
+            <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Виж повече</a>
 
             <hr/>
         </div>
