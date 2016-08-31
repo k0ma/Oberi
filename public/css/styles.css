@@ -1,7 +1,17 @@
+/*body{
+    background-image: url('../images/6986374-rock-free-climbing.jpg');
+}*/
+.navbar-brand{
+    padding: 10px 30px;
+    font-size: 28px;
+}
+.navbar-brand img{
+    height: 30px;
+}
 .btn-h2-spacing{
     margin-top: 18px;
 }
-.form-spacing-top{
+.form-spacing-top, .tags-spacing-top{
     margin-top: 30px;
 }
 .btn-spacing-top{

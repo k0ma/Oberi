@@ -30,27 +30,27 @@
                 {{ Form::label('title',  'Име на обекта:') }}
                 {{ Form::text('title', null, array('class' => 'form-control', 'required' =>'', 'maxlength' => '255')) }}
 
-                {{ Form::label('slug', 'Slug:') }}
+                {{ Form::label('slug', 'Slug:',["class"=>'form-spacing-top']) }}
                 {{ Form::text('slug', null, array("class"=> 'form-control','required'=>'', 'minlength' =>'5', 'maxlength'=>'255')) }}
 
-                {{ Form::label('category_id', 'Категория:') }}
+                {{ Form::label('category_id', 'Категория:',["class"=>'form-spacing-top']) }}
                 <select class="form-control" name="category_id">
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
 
-                {{ Form::label('tags', 'Тагове:') }}
+                {{ Form::label('tags', 'Тагове:',["class"=>'form-spacing-top']) }}
                 <select class="form-control select2-multi" name="tags[]" multiple="multiple">
                     @foreach($tags as $tag)
                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                     @endforeach
                 </select>
 
-                {{ Form::label('featured_image',  'Добавяне на изображение:') }}
+                {{ Form::label('featured_image',  'Добавяне на изображение:',["class"=>'form-spacing-top']) }}
                 {{ Form::file('featured_image') }}
 
-                {{ Form::label('body',  'Описание на обекта:') }}
+                {{ Form::label('body',  'Описание на обекта:',["class"=>'form-spacing-top']) }}
                 {{ Form::textarea('body', null, array('class' => 'form-control')) }}
 
                 {{ Form::submit('Създай обект', array('class' => 'btn btn-success btn-md btn-block', 'style'=> 'margin-top: 20px;')) }}

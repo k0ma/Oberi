@@ -5,12 +5,13 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
+            <img src="{{asset('images/'.$post->image)}}" alt="изображение"/>
             <h2>{{ $post->title }}</h2>
             <p class="lead">{!! $post->body !!}</p>
             <hr/>
             <div class="tags">
                 @foreach($post->tags as $tag)
-                    <span class="label label-default">{{ $tag->name }}</span>
+                    <span class="label label-default tags-spacing-top">{{ $tag->name }}</span>
                 @endforeach
             </div>
             <div id="backend-comments">

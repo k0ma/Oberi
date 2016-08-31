@@ -19,7 +19,7 @@
 @section('content')
     <div class="row">
        <!-- start form -->
-        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method'=>'PUT']) !!}
+        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method'=>'PUT', 'files'=>true ]) !!}
         <div class="col-md-8">
             {{ Form::label('title', 'Име на обекта: ') }}
             {{ Form::text('title', null,["class"=>'form-control input-lg']) }}
@@ -30,8 +30,11 @@
             {{ Form::label('category_id', 'Категория:',["class"=>'form-spacing-top']) }}
             {{ Form::select('category_id', $categories, null, ['class'=> 'form-control']) }}
 
-            {{ Form::label('tags', 'Тагове:', ['class'=> 'form-spacing top']) }}
+            {{ Form::label('tags', 'Тагове:',["class"=>'form-spacing-top']) }}
             {{ Form::select('tags[]', $tags, null, ['class' => 'form-control select2-multi', 'multiple' => 'multiple']) }}
+
+            {{ Form::label('featured_image', 'Промяна на изображение:',["class"=>'form-spacing-top']) }}
+            {{ Form::file('featured_image') }}
 
             {{ Form::label('body', 'Описание на обекта: ', ["class"=>'form-spacing-top']) }}
             {{ Form::textarea('body',null, ["class"=>'form-control']) }}

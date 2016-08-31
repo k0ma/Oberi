@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['middleware'=>['web']], function (){
+Route::group(['middlewareGroups'=>['web']], function (){
 
     Route::get('auth/login', ['as' => 'login', 'uses'=>'Auth\AuthController@getLogin']);
     Route::post('auth/login', 'Auth\AuthController@postLogin');

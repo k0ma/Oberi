@@ -9,6 +9,12 @@
             <img src="{{ asset('images/' . $post->image) }}" height="300" width="600"/>
             <h2>{{ $post->title }}</h2>
             <p>{!! $post->body !!}</p>
+
+            <div class="tags tags-spacing-top">
+                @foreach($post->tags as $tag)
+                    <span class="label label-default ">{{ $tag->name }}</span>
+                @endforeach
+            </div>
             <hr/>
             <p>Публикувано в категория: {{ $post->category->name }} на: {{ $post->category->created_at }}</p>
             <hr/>
