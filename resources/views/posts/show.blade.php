@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8">
             <h2>{{ $post->title }}</h2>
-            <p class="lead">{{ $post->body }}</p>
+            <p class="lead">{!! $post->body !!}</p>
             <hr/>
             <div class="tags">
                 @foreach($post->tags as $tag)

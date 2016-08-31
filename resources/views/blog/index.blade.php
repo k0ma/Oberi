@@ -15,7 +15,7 @@
             <h3>{{ $post->title }}</h3>
             <h5>Публикувано на: {{ date('j M Y', strtotime($post->created_at)) }}</h5>
 
-            <p>{{ substr($post->body, 0, 250) }}{{ strlen($post->body)>250?"...":"" }}</p>
+            <p>{{ substr($post->body, 0, 250) }}{{ strlen(strip_tags($post->body))>250?"...":"" }}</p>
 
             <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Виж повече</a>
 

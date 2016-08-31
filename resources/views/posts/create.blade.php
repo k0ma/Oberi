@@ -6,6 +6,15 @@
 
     {!! Html::style('css/parsley.css') !!}
     {!! Html::style('css/select2.min.css') !!}
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: "link code",
+            menubar: false
+        });
+    </script>
 
 
 @endsection
@@ -38,7 +47,7 @@
                 </select>
 
                 {{ Form::label('body',  'Описание на обекта:') }}
-                {{ Form::textarea('body', null, array('class' => 'form-control', 'required' =>'')) }}
+                {{ Form::textarea('body', null, array('class' => 'form-control')) }}
 
                 {{ Form::submit('Създай обект', array('class' => 'btn btn-success btn-md btn-block', 'style'=> 'margin-top: 20px;')) }}
             {!! Form::close() !!}
