@@ -25,7 +25,8 @@
         <div class="col-md-8 col-md-offset-2">
             <h1>Нов обект</h1>
             <hr/>
-            {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate'=>'')) !!}
+
+            {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate'=>'', 'files' => true)) !!}
                 {{ Form::label('title',  'Име на обекта:') }}
                 {{ Form::text('title', null, array('class' => 'form-control', 'required' =>'', 'maxlength' => '255')) }}
 
@@ -45,6 +46,9 @@
                         <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                     @endforeach
                 </select>
+
+                {{ Form::label('featured_image',  'Добавяне на изображение:') }}
+                {{ Form::file('featured_image') }}
 
                 {{ Form::label('body',  'Описание на обекта:') }}
                 {{ Form::textarea('body', null, array('class' => 'form-control')) }}

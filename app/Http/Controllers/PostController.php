@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Post;
 use App\Tag;
+use Intervention\Image\Facades\Image;
 use Session;
 use Purifier;
 
@@ -51,6 +52,16 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->body);
+
+        //save image
+        if ($request->hasFile('featured_image')){
+            $image=$request->file('featured_image');
+            $filename = time() . '.' .  $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(800, 400)->save($location);
+
+            $post->image = $filename;
+        }
 
         $post->save();
 
