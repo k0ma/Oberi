@@ -18,9 +18,11 @@
 
 @section('content')
     <div class="row">
+
        <!-- start form -->
         {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method'=>'PUT', 'files'=>true ]) !!}
         <div class="col-md-8">
+            <div class="post">
             {{ Form::label('title', 'Име на обекта: ') }}
             {{ Form::text('title', null,["class"=>'form-control input-lg']) }}
 
@@ -38,6 +40,7 @@
 
             {{ Form::label('body', 'Описание на обекта: ', ["class"=>'form-spacing-top']) }}
             {{ Form::textarea('body',null, ["class"=>'form-control']) }}
+        </div>
         </div>
         <div class="col-md-4">
             <div class="well">

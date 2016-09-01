@@ -3,7 +3,7 @@
 @section('title', "| $tag->name Tag")
 
 @section('content')
-
+    <div class="post">
     <div class="row">
         <div class="col-md-8">
             <h1>Тагът "{{ $tag->name }}"<small> е свързан с {{$tag->posts()->count()}} обекта</small></h1>
@@ -44,5 +44,6 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 @endsection

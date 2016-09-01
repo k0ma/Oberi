@@ -5,7 +5,9 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
-            <img src="{{asset('images/'.$post->image)}}" alt="изображение"/>
+            <div class="post">
+
+            <img src="{{asset('images/'.$post->image)}}"  height="300" width="600" alt="изображение"/>
             <h2>{{ $post->title }}</h2>
             <p class="lead">{!! $post->body !!}</p>
             <hr/>
@@ -40,6 +42,7 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
         <div class="col-md-4">

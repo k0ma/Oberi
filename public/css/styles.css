@@ -1,6 +1,6 @@
-/*body{
-    background-image: url('../images/6986374-rock-free-climbing.jpg');
-}*/
+#backgroundImage {
+    background-image: url('../images/background1.jpg');
+}
 .navbar-brand{
     padding: 10px 30px;
     font-size: 28px;
@@ -11,7 +11,7 @@
 .btn-h2-spacing{
     margin-top: 18px;
 }
-.form-spacing-top, .tags-spacing-top{
+.form-spacing-top, .tags-spacing-top, .spacing-top{
     margin-top: 30px;
 }
 .btn-spacing-top{
@@ -50,4 +50,19 @@
 }
 .comments-title>span{
     margin-right: 5px;
+}
+.jumbotron{
+    background-color: #FFFFFF;
+}
+.post{
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 20px 40px 40px 40px;
+    margin: 15px;
+}
+.well{
+    margin-top: 15px;
+}
+.jumbotron img{
+    height: 150px;
 }

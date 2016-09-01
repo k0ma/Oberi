@@ -3,7 +3,8 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2 ">
+            <div class="post">
             <h1>Свържете се с нас</h1>
             <hr/>
             <form action="{{ url('contact') }}" method="POST">
@@ -24,6 +25,7 @@
 
                 <input type="submit" value="Изпрати съобщението" class="btn btn-success">
             </form>
+            </div>
         </div>
     </div>
 @endsection

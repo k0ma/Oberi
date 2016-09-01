@@ -6,6 +6,7 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div class="post">
             <img src="{{ asset('images/' . $post->image) }}" height="300" width="600"/>
             <h2>{{ $post->title }}</h2>
             <p>{!! $post->body !!}</p>
@@ -18,11 +19,13 @@
             <hr/>
             <p>Публикувано в категория: {{ $post->category->name }} на: {{ $post->category->created_at }}</p>
             <hr/>
+            </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div class="post">
             <h3 class="comments-title">
                 <span class="glyphicon glyphicon-comment"></span>
                 Коментари
@@ -46,9 +49,11 @@
                 </div>
             @endforeach
         </div>
+        </div>
     </div>
     <div class="row">
         <div id="comment-form" class="col-md-8 col-md-offset-2">
+            <div class="post">
             {{Form::open(['route'=>['comments.store', $post->id], 'method' => 'POST'])}}
             <div class="row">
                 <div class="col-md-6">
@@ -68,6 +73,7 @@
             </div>
 
             {{ Form::close() }}
+        </div>
         </div>
     </div>
     @endsection

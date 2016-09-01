@@ -1,3 +1,1 @@
-<hr/>
-
-<p style="text-align: center;">Copyright SoftUni-All Rights Reserved</p>
+<p class="navbar navbar-default" style="text-align: center; padding-top: 10px">Copyright SoftUni-All Rights Reserved</p>

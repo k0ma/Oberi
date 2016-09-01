@@ -5,20 +5,22 @@
 @section('content')
 
 
+    <div class="post">
     <div class="row">
-        <div class="col-md-10">
-            <h2>Всички обекти</h2>
-        </div>
 
-        <div class="col-md-2">
-            <a href="{{ route('posts.create') }}" class="btn btn-sm btn-block btn-primary btn-h2-spacing">Създай нов обект</a>
-        </div>
-        <div class="col-md-12">
-            <hr/>
-        </div>
+            <div class="col-md-10">
+                <h2>Всички обекти</h2>
+            </div>
+
+            <div class="col-md-2">
+                <a href="{{ route('posts.create') }}" class="btn btn-sm btn-block btn-primary btn-h2-spacing">Създай нов обект</a>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+            </div>
     </div>
     <div class="row">
-        <col-md-12>
+        <div>
             <table class="table">
                 <thead>
                     <th>#</th>
@@ -46,7 +48,8 @@
             <div class="text-center">
                 {!! $posts->links() !!}
             </div>
-        </col-md-12>
+        </div>
+    </div>
     </div>
 
-@stop
+@endsection

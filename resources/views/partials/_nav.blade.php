@@ -16,14 +16,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Начало</a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Обекти<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="3">category-></a></li>
-                    </ul>
-                </li>
-
                 <li class="{{ Request::is('blog') ? "active" : "" }}"><a href="/blog">Обекти</a></li>
                 <li class="{{ Request::is('about') ? "active" : "" }}"><a href="/about">За нас</a></li>
                 <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Контакти</a></li>
